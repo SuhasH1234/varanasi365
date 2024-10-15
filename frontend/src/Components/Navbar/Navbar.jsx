@@ -15,7 +15,7 @@ const Navbar = () => {
             <Link to='/'>
                 <img src={logo} alt='' />
             </Link>
-            <p>VARANASI</p>
+            <p className="varanasi-text">VARANASI</p>
         </div>
 
         <ul className='nav-menu'>
