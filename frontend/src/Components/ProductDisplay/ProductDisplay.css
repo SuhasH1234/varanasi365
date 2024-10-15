@@ -112,3 +112,9 @@
 .productdisplay-right-tags span {
     font-weight: bold;
 }
+
+.productdisplay-volumeicon{
+    margin-left: 20px;
+    cursor: pointer;
+    color: #3d3d3d;
+}

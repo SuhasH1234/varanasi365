@@ -95,3 +95,25 @@
     color: white;
     font-weight: bold; /* Increased font weight for visibility */
 }
+
+.nav-logo p {
+    color: #171717; /* Default color for the logo text */
+    font-size: 36px; /* Base font size */
+    font-weight: 700; /* Bold weight for emphasis */
+    margin: 0; /* Remove default margin */
+}
+
+.varanasi-text {
+    background: linear-gradient(90deg, #FF4141, #FFB300); /* Gradient from red to yellow to blue */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text color transparent to show the gradient */
+    font-size: 48px; /* Increased font size for more impact */
+    font-weight: 900; /* Heavier font weight for a bolder look */
+    transition: transform 0.3s ease, color 0.3s ease; /* Add a transition for hover effect */
+}
+
+.varanasi-text:hover {
+    transform: scale(1.05); /* Slightly enlarge the text on hover */
+    color: #fff; /* Optional: Change color on hover for a cool effect */
+}
+
