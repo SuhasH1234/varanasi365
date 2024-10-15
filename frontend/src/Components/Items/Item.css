@@ -24,7 +24,15 @@
     text-decoration: line-through;
 }
 
-/* .item:hover{
+.item img{
+    width: 350px;
+    height: 475px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.item:hover{
     transform: scale(1.05);
     transition: 0.6s;
-} */
+}

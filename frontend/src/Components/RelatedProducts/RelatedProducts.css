@@ -1,25 +1,26 @@
-.popular {
+.relatedproducts {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     height: auto;
+    margin-bottom: 5%;
 }
 
-.popular h1 {
+.relatedproducts h1 {
     color: #171717;
     font-size: 40px;
     font-weight: 600;
 }
 
-.popular hr {
+.relatedproducts hr {
     width: 200px;
     height: 3px;
     border-radius: 10px;
     background: #252525;
 }
 
-.popular-item {
+.relatedproducts-item {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

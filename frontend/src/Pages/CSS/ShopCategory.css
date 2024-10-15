@@ -1,6 +1,6 @@
 .shopcategory-indexSort{
     display: flex;
-    margin: 0px 170px;
+    margin: 0px 80px;
     justify-content: space-between;
     align-items: center;
 }
@@ -34,4 +34,12 @@
     color: #787878;
     font-size: 18px;
     font-weight: 500;
+}
+
+.shopcategory img{
+    width: 350px;
+    height: 475px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

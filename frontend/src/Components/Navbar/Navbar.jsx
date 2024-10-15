@@ -4,6 +4,7 @@ import logo from '../Assets/logo.png'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
 
+
 const Navbar = () => {
 
     const [menu, setMenu] = useState("shop");
@@ -11,7 +12,9 @@ const Navbar = () => {
   return (
     <div className='navbar'>
         <div className='nav-logo'>
-            <img src={logo} alt='' />
+            <Link to='/'>
+                <img src={logo} alt='' />
+            </Link>
             <p>VARANASI</p>
         </div>
 
@@ -21,6 +24,7 @@ const Navbar = () => {
             <li onClick={() => {setMenu("Stone Carvings")}}><Link style={{textDecoration: 'none'}} to='/stone-carvings'>Stone Carvings</Link> {menu==="Stone Carvings"?<hr/> : <></> }</li>
             <li onClick={() => {setMenu("Bangles and Bracelets")}}><Link style={{textDecoration: 'none'}} to='/bangles-bracelets'>Bangles and Bracelets</Link> {menu==="Bangles and Bracelets"?<hr/> : <></> }</li>
             <li onClick={() => {setMenu("Rudraksha Mala")}}><Link style={{textDecoration: 'none'}} to='/rudraksha-mala'>Rudraksha Mala</Link> {menu==="Rudraksha Mala"?<hr/> : <></> }</li>
+            <li onClick={() => {setMenu("Gulabi Minakari")}}><Link style={{textDecoration: 'none'}} to='/gulabi-minakari'>Gulabi Minakari</Link> {menu==="Gulabi Minakari"?<hr/> : <></> }</li>
             <li onClick={() => {setMenu("Wooden Toys")}}><Link style={{textDecoration: 'none'}} to='/wooden-toys'>Wooden Toys</Link> {menu==="Wooden Toys"?<hr/> : <></> }</li>
             <li onClick={() => {setMenu("Hand Knotted Carpets")}}><Link style={{textDecoration: 'none'}} to='/carpets'>Hand Knotted Carpets</Link> {menu==="Hand Knotted Carpets"?<hr/> : <></> }</li>
         </ul>
