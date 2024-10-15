@@ -1,0 +1,114 @@
+.productdisplay {
+    display: flex;
+    margin: 0 100px;
+}
+
+.productdisplay-left {
+    display: flex;
+    gap: 17px;
+}
+
+.productdisplay-main-img {
+    width: 500px;
+    height: 700px;
+}
+
+.productdisplay-img-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-right: 10px;
+}
+
+.productdisplay-img-list img {
+    height: 164px;
+}
+
+.productdisplay-right {
+    margin: 0 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productdisplay-right h1 {
+    color: #3d3d3d;
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.productdisplay-right-star {
+    display: flex;
+    align-items: center;
+    margin: -10px 0px;
+}
+
+.productdisplay-right-prices {
+    display: flex;
+    margin: 30px 0;
+    gap: 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.productdisplay-right-price-old {
+    color: #818181;
+    text-decoration: line-through;
+}
+
+.productdisplay-right-price-new {
+    color: #ff4141;
+}
+
+.productdisplay-right-description {
+    margin-top: 20px; /* Space below prices */
+    color: #656565;
+    font-size: 16px;
+}
+
+.productdisplay-right-size {
+    margin-top: 20px; /* Space above size selection */
+}
+
+.productdisplay-right-size h1 {
+    margin-bottom: 10px; /* Space below "Select Size" heading */
+    color: #656565;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.productdisplay-right-sizes {
+    display: flex;
+    gap: 20px;
+}
+
+.productdisplay-right-sizes div {
+    padding: 18px 24px;
+    background: #fbfbfb;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.productdisplay-right button {
+    padding: 20px 40px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: #ff4141;
+    margin: 30px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.productdisplay-right-category,
+.productdisplay-right-tags {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.productdisplay-right-category span,
+.productdisplay-right-tags span {
+    font-weight: bold;
+}
