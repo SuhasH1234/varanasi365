@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 32px; /* Added horizontal padding for a more spacious look */
+    padding: 12px 32px; /* Added horizontal padding for a more spacious look */
     background-color: #ffffff; /* Set a background color for the navbar */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Softer shadow for a more modern look */
 }
@@ -28,7 +28,7 @@
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 40px; /* Adjusted gap for better spacing */
+    gap: 25px; /* Adjusted gap for better spacing */
     color: #626262;
     font-size: 18px; /* Reduced font size for consistency */
     font-weight: 500;
@@ -59,7 +59,7 @@
 .nav-login-cart {
     display: flex;
     align-items: center;
-    gap: 30px; /* Adjusted gap for a more balanced layout */
+    gap: 30px;
 }
 
 .nav-login-cart button {
@@ -82,25 +82,18 @@
 }
 
 .nav-cart-count {
-    width: 24px; /* Increased size for better visibility */
-    height: 24px; /* Increased size for better visibility */
+    width: 20px; /* Increased size for better visibility */
+    height: 20px; /* Increased size for better visibility */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: -35px; /* Ensure it overlays correctly */
-    margin-left: -50px; /* Adjusted to center the count */
+    margin-left: -40px; /* Adjusted to center the count */
     border-radius: 50%; /* Use full circle for better aesthetics */
     font-size: 14px;
     background: red;
     color: white;
     font-weight: bold; /* Increased font weight for visibility */
-}
-
-.nav-logo p {
-    color: #171717; /* Default color for the logo text */
-    font-size: 36px; /* Base font size */
-    font-weight: 700; /* Bold weight for emphasis */
-    margin: 0; /* Remove default margin */
 }
 
 .varanasi-text {
@@ -117,3 +110,53 @@
     color: #fff; /* Optional: Change color on hover for a cool effect */
 }
 
+/* Responsive Styles */
+@media (max-width: 1280px) {
+    .nav-menu {
+        gap: 20px;
+        font-size: 16px; /* Slightly smaller font size */
+    }
+    .nav-logo p {
+        font-size: 32px; /* Smaller font size */
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 12px 20px; /* Less padding for smaller screens */
+    }
+    .nav-menu {
+        flex-wrap: wrap; /* Wrap menu items */
+        gap: 10px; /* Smaller gap */
+    }
+    .nav-logo p {
+        font-size: 28px; /* Smaller font size */
+    }
+}
+
+@media (max-width: 800px) {
+    .nav-login-cart {
+        flex-direction: column; /* Stack login and cart */
+        gap: 10px;
+    }
+    .nav-menu {
+        display: none; /* Hide menu items */
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        flex-direction: column; /* Stack logo and menu */
+        align-items: flex-start; /* Align items to the left */
+    }
+    .nav-logo {
+        margin-bottom: 10px; /* Space between logo and menu */
+    }
+    .nav-login-cart {
+        width: 100%; /* Full width for login/cart */
+        justify-content: space-between; /* Space items */
+    }
+    .nav-logo img {
+        width: 50px; /* Smaller logo */
+    }
+}

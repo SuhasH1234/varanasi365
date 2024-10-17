@@ -19,3 +19,46 @@
   border-radius: 10px;
   background: #252525;
 }
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+  .popular h1 {
+    font-size: 36px; /* Adjusted font size */
+  }
+  .popular hr {
+    width: 180px; /* Slightly narrower hr */
+  }
+}
+
+@media (max-width: 1024px) {
+  .popular h1 {
+    font-size: 32px; /* Smaller font size */
+  }
+  .popular hr {
+    width: 160px; /* Adjust hr width */
+  }
+}
+
+@media (max-width: 800px) {
+  .popular h1 {
+    font-size: 28px; /* Further reduced font size */
+  }
+  .popular hr {
+    width: 140px; /* Adjust hr width */
+  }
+  .popular {
+    margin: 20px; /* Reduce margins */
+  }
+}
+
+@media (max-width: 500px) {
+  .popular h1 {
+    font-size: 24px; /* Smallest font size */
+  }
+  .popular hr {
+    width: 100px; /* Adjust hr width */
+  }
+  .popular {
+    margin: 10px; /* Further reduce margins */
+  }
+}

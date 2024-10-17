@@ -14,7 +14,7 @@ const ShopCategory = (props) => {
           <span>Showing 1-12</span> out of {all_product.length} products
         </p>
         <div className="shopcategory-sort">
-          Sort by <ArrowDropDownIcon />
+          Sort by <ArrowDropDownIcon fontSize='small' />
         </div>
       </div>
       <div className="shopcategory-products">
