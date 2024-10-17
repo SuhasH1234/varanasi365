@@ -27,3 +27,62 @@
     gap: 40px;
     margin-bottom: 2%;
 }
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+    .relatedproducts h1 {
+        font-size: 36px; /* Adjust font size */
+    }
+
+    .relatedproducts hr {
+        width: 180px; /* Adjust width */
+    }
+
+    .relatedproducts-item {
+        gap: 30px; /* Adjust gap */
+    }
+}
+
+@media (max-width: 1024px) {
+    .relatedproducts h1 {
+        font-size: 32px; /* Further reduce font size */
+    }
+
+    .relatedproducts hr {
+        width: 160px; /* Further adjust width */
+    }
+
+    .relatedproducts-item {
+        gap: 20px; /* Reduce gap */
+    }
+}
+
+@media (max-width: 800px) {
+    .relatedproducts {
+        gap: 20px; /* Reduce overall gap */
+    }
+
+    .relatedproducts h1 {
+        font-size: 28px; /* Reduce font size */
+    }
+
+    .relatedproducts-item {
+        gap: 15px; /* Further reduce gap */
+    }
+}
+
+@media (max-width: 500px) {
+    .relatedproducts h1 {
+        font-size: 24px; /* Further reduce font size */
+        text-align: center; /* Center align for small screens */
+    }
+
+    .relatedproducts hr {
+        width: 140px; /* Adjust width */
+    }
+
+    .relatedproducts-item {
+        justify-content: center; /* Center align items */
+        gap: 10px; /* Reduce gap further */
+    }
+}

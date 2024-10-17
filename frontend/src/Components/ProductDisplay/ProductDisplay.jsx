@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import './ProductDisplay.css';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import StarIcon from '@mui/icons-material/Star';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import { ShopContext } from '../../Context/ShopContext';
 
 const ProductDisplay = (props) => {
     const { product } = props;
+    const {addToCart} = useContext(ShopContext);
+
     const [isSpeaking, setIsSpeaking] = useState(false);
 
     // Function to read out product details
@@ -76,7 +79,7 @@ const ProductDisplay = (props) => {
                         <div>XXL</div>
                     </div>
                 </div>
-                <button>ADD TO CART</button>
+                <button onClick={() => {addToCart(product.id)}}>ADD TO CART</button>
                 <p className='productdisplay-right-category'><span>Category:</span> Saree, Crop Top</p>
                 <p className='productdisplay-right-tags'><span>Tags:</span> Modern, Latest, Artisan</p>
             </div>

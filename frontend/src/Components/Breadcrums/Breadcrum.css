@@ -1,4 +1,4 @@
-.breadcrum{
+.breadcrum {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -7,4 +7,36 @@
     font-weight: 600;
     margin: 25px 100px;
     text-transform: capitalize;
+}
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+    .breadcrum {
+        margin: 25px 80px; /* Adjust margin */
+        font-size: 15px; /* Slightly reduce font size */
+    }
+}
+
+@media (max-width: 1024px) {
+    .breadcrum {
+        margin: 25px 60px; /* Further adjust margin */
+        font-size: 14px; /* Reduce font size */
+    }
+}
+
+@media (max-width: 800px) {
+    .breadcrum {
+        margin: 25px 40px; /* Further adjust margin */
+        font-size: 13px; /* Reduce font size */
+        gap: 5px; /* Reduce gap between items */
+    }
+}
+
+@media (max-width: 500px) {
+    .breadcrum {
+        margin: 20px 20px; /* Adjust margin for small screens */
+        font-size: 12px; /* Further reduce font size */
+        flex-direction: column; /* Stack items vertically for small screens */
+        align-items: flex-start; /* Align items to start */
+    }
 }
