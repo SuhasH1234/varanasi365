@@ -24,9 +24,7 @@ function App() {
         <Route path='/wooden-toys' element={<ShopCategory category="Wooden Toys"/>} />
         <Route path='/gulabi-minakari' element={<ShopCategory category="Gulabi Minakari"/>} />
         <Route path='/carpets' element={<ShopCategory category="Hand Knotted Carpets"/>} />
-        <Route path='/product' element={<Product/>}>
-          <Route path=':productId' element={<Product/>} />
-        </Route>
+        <Route path='/product/:productId' element={<Product/>} />
         <Route path='/cart' element={<Cart/>} />
         <Route path='/login' element={<LoginSignup/>} />
 

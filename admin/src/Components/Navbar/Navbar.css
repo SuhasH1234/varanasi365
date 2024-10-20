@@ -1,0 +1,141 @@
+.navbar { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 32px;
+    box-shadow: 0 1px 3px -2px #000;
+    background: white;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo-img {
+    width: 50px; /* Default size */
+    height: 50px; /* Default size */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.nav-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.artisan-text {
+    font-size: 25px; /* Default size */
+    margin-left: 10px;
+    margin-bottom: -25px;
+    color: black;
+}
+
+.admin-panel-text {
+    font-size: 15px; /* Default size */
+    color: #555; /* Optional color */
+    margin-left: 12px;
+    color: red;
+}
+
+.nav-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Max-width: 1280px */
+@media (max-width: 1280px) {
+    .artisan-text {
+        font-size: 23px;
+    }
+
+    .admin-panel-text {
+        font-size: 14px;
+    }
+
+    .nav-logo-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-profile {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Max-width: 1024px */
+@media (max-width: 1024px) {
+    .artisan-text {
+        font-size: 21px;
+    }
+
+    .admin-panel-text {
+        font-size: 13px;
+    }
+
+    .nav-logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-profile {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Max-width: 800px */
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-text {
+        align-items: flex-start; /* Align text to the start */
+    }
+
+    .artisan-text {
+        font-size: 19px;
+    }
+
+    .admin-panel-text {
+        font-size: 12px;
+    }
+
+    .nav-logo-img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav-profile {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Max-width: 500px */
+@media (max-width: 500px) {
+    .navbar {
+        padding: 10px 15px; /* Reduce padding */
+    }
+
+    .artisan-text {
+        font-size: 17px;
+    }
+
+    .admin-panel-text {
+        font-size: 11px;
+    }
+
+    .nav-logo-img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .nav-profile {
+        width: 30px;
+        height: 30px;
+    }
+}

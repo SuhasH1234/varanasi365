@@ -1,0 +1,77 @@
+/* Main container for the AllArtisans component */
+.artisans-container {
+    width: 100%; /* Maximum width */
+    margin: 0 5px; /* Center alignment */
+    
+}
+
+/* Title styles */
+.artisans-container h1 {
+    text-align: center; /* Center the title */
+    font-size: 2.5em; /* Larger font for the title */
+    color: #5c5c5c; /* A professional gray color */
+}
+
+/* Artisan list styles */
+.artisan-list {
+    list-style: none; /* Remove default list styles */
+}
+
+.artisan-list li {
+    background-color: white; /* White background for each artisan */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 10px 0; /* Space between list items */
+    padding: 15px; /* Inner padding */
+}
+
+.artisan-list p {
+    margin: 5px 0; /* Space between paragraphs */
+}
+
+/* Divider style */
+.artisan-list hr {
+    border: 0; /* Remove default border */
+    border-top: 1px solid #e0e0e0; /* Subtle divider line */
+    margin: 15px 0; /* Space around divider */
+}
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+    .artisans-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    .artisans-container h1 {
+        font-size: 2.2em; /* Slightly smaller title */
+    }
+}
+
+@media (max-width: 1024px) {
+    .artisans-container {
+        padding: 10px; /* Further adjust padding */
+    }
+    .artisan-list li {
+        padding: 10px; /* Adjust inner padding */
+    }
+}
+
+@media (max-width: 800px) {
+    .artisan-list li {
+        padding: 8px; /* Less padding for small screens */
+    }
+    .artisans-container h1 {
+        font-size: 1.8em; /* Smaller title for smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .artisans-container {
+        padding: 5px; /* Minimal padding */
+    }
+    .artisan-list li {
+        padding: 5px; /* Minimal padding */
+    }
+    .artisans-container h1 {
+        font-size: 1.5em; /* Smallest title size */
+    }
+}
