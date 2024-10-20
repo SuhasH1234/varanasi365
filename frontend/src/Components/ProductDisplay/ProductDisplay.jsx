@@ -79,9 +79,13 @@ const ProductDisplay = (props) => {
                         <div>XXL</div>
                     </div>
                 </div>
-                <button onClick={() => {addToCart(product.id)}}>ADD TO CART</button>
-                <p className='productdisplay-right-category'><span>Category:</span> Saree, Crop Top</p>
-                <p className='productdisplay-right-tags'><span>Tags:</span> Modern, Latest, Artisan</p>
+                <button onClick={() => {
+                    console.log("Adding to cart:", product.id);
+                    addToCart(String(product.id));
+                    }}>ADD TO CART</button>
+
+                    <p className='productdisplay-right-category'><span>Category:</span> Saree, Crop Top</p>
+                    <p className='productdisplay-right-tags'><span>Tags:</span> Modern, Latest, Artisan</p>
             </div>
         </div>
     );
