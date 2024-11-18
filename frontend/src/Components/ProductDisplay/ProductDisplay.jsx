@@ -3,6 +3,7 @@ import './ProductDisplay.css';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import StarIcon from '@mui/icons-material/Star';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import Snackbar from '@mui/material/Snackbar';
 import { ShopContext } from '../../Context/ShopContext';
 
 const ProductDisplay = (props) => {
@@ -10,6 +11,7 @@ const ProductDisplay = (props) => {
     const {addToCart} = useContext(ShopContext);
 
     const [isSpeaking, setIsSpeaking] = useState(false);
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
 
     // Function to read out product details
     const readProductDetails = () => {
@@ -28,6 +30,19 @@ const ProductDisplay = (props) => {
             newSpeech.onend = () => {
                 setIsSpeaking(false);
             };
+        }
+    };
+
+    // Check if user is logged in
+    const handleAddToCart = () => {
+        const token = localStorage.getItem('auth-token');
+        if (!token) {
+            // User is not logged in, show snackbar
+            setSnackbarOpen(true);
+        } else {
+            // User is logged in, proceed to add to cart
+            console.log("Adding to cart:", product.id);
+            addToCart(String(product.id));
         }
     };
 
@@ -69,24 +84,18 @@ const ProductDisplay = (props) => {
                 <div className="productdisplay-right-description">
                     {product.description}
                 </div>
-                <div className="productdisplay-right-size">
-                    <h1>Select Size</h1>
-                    <div className="productdisplay-right-sizes">
-                        <div>S</div>
-                        <div>M</div>
-                        <div>L</div>
-                        <div>XL</div>
-                        <div>XXL</div>
-                    </div>
-                </div>
-                <button onClick={() => {
-                    console.log("Adding to cart:", product.id);
-                    addToCart(String(product.id));
-                    }}>ADD TO CART</button>
-
-                    <p className='productdisplay-right-category'><span>Category:</span> Saree, Crop Top</p>
-                    <p className='productdisplay-right-tags'><span>Tags:</span> Modern, Latest, Artisan</p>
+                <button onClick={handleAddToCart}>ADD TO CART</button>
+                <p className='productdisplay-right-category'><span>Category:</span> Saree, Crop Top</p>
+                <p className='productdisplay-right-tags'><span>Tags:</span> Modern, Latest, Artisan</p>
             </div>
+
+            {/* Snackbar for login message */}
+            <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={3000}
+                onClose={() => setSnackbarOpen(false)}
+                message="Please log in to add items to the cart"
+            />
         </div>
     );
 }

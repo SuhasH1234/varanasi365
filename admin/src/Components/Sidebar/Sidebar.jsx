@@ -4,7 +4,8 @@ import './Sidebar.css';
 import { Link } from 'react-router-dom';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
-import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline'; // Import icon for artisans
+import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
+import EventOutlinedIcon from '@mui/icons-material/EventOutlined';
 
 const Sidebar = () => {
   return (
@@ -19,6 +20,18 @@ const Sidebar = () => {
         <div className="sidebar-item">
           <FormatListBulletedOutlinedIcon style={{ color: 'black' }} />
           <p>Product List</p>
+        </div>
+      </Link>
+      <Link to={'/addevent'} style={{ textDecoration: 'none' }}>
+        <div className="sidebar-item">
+          <EventOutlinedIcon style={{ color: 'black' }} />
+          <p>Add Event</p>
+        </div>
+      </Link>
+      <Link to={'/listevent'} style={{ textDecoration: 'none' }}>
+        <div className="sidebar-item">
+          <FormatListBulletedOutlinedIcon style={{ color: 'black' }} />
+          <p>Event List</p>
         </div>
       </Link>
       <Link to={'/profile'} style={{ textDecoration: 'none' }}>

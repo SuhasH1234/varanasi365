@@ -77,24 +77,24 @@ const AddProduct = () => {
         <div className='add-product'>
             <h1>Add Product</h1>
             <div className="addproduct-itemfield">
-                <p>Product Title</p>
+                <p>Product Title:</p>
                 <input value={productDetails.name} onChange={changeHandler} type="text" name='name' placeholder='Type here' />
             </div>
             <div className="addproduct-itemfield">
-                <p>Description</p>
+                <p>Description:</p>
                 <input value={productDetails.description} onChange={changeHandler} type="text" name='description' placeholder='Type here' />
             </div>
             <div className="addproduct-price">
                 <div className="addproduct-itemfield">
-                    <p>Price</p>
+                    <p>Price:</p>
                     <input value={productDetails.old_price} onChange={changeHandler} type="text" name='old_price' placeholder='Type here' />
                 </div>
                 <div className="addproduct-itemfield">
-                    <p>Offer Price</p>
+                    <p>Offer Price:</p>
                     <input value={productDetails.new_price} onChange={changeHandler} type="text" name='new_price' placeholder='Type here' />
                 </div>
                 <div className="addproduct-itemfield">
-                    <p>Product Category</p>
+                    <p>Product Category:</p>
                     <select value={productDetails.category} onChange={changeHandler} name="category" className='addproduct-selector'>
                         <option value="Saree">Saree</option>
                         <option value="Stone Carvings">Stone Carvings</option>
@@ -103,12 +103,13 @@ const AddProduct = () => {
                         <option value="Gulabi Minakari">Gulabi Minakari</option>
                         <option value="Wooden Toys">Wooden Toys</option>
                         <option value="Hand Knotted Carpets">Hand Knotted Carpets</option>
+                        <option value="Varanasi Special">Varanasi Special</option>
                     </select>
                 </div>
             </div>
             <div className="addproduct-itemfield">
                 <label htmlFor="file-input">
-                    <p>Upload Images</p>
+                    <p>Upload Image:</p>
                     <img src={image ? URL.createObjectURL(image) : upload_area} className='addproduct-thumbnail-image' alt="" />
                 </label>
                 <input onChange={imageHandler} type="file" name="image" id="file-input" hidden />

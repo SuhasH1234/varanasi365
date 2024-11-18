@@ -1,0 +1,129 @@
+.view-events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    max-width: 1280px; /* Maximum width for larger screens */
+    margin: 0 auto; /* Centering the view */
+    padding: 20px; /* Optional padding */
+}
+
+.view-events h1 {
+    color: #171717;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.view-events hr {
+    width: 100px;
+    height: 3px;
+    border-radius: 10px;
+    background: #252525;
+}
+
+.error-message {
+    color: red; /* Red color for error messages */
+    text-align: center; /* Center error messages */
+}
+
+.events-list {
+    display: flex; /* Use flex to align events in a row */
+    flex-wrap: wrap; /* Allow wrapping to a new line if necessary */
+    gap: 20px; /* Space between event items */
+    justify-content: center; /* Center the events in the container */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.event-item {
+    display: flex; /* Use flexbox for each event item */
+    margin-bottom: 3%;
+    flex-direction: column; /* Arrange content vertically */
+    width: 300px; /* Fixed width for event items */
+    padding: 35px; /* Inner padding for each event */
+    border: 1px solid #ddd; /* Border around each event */
+    border-radius: 5px; /* Rounded corners for event items */
+    background-color: #fff; /* White background for event items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    word-wrap: break-word; /* Break long words to avoid overflow */
+    overflow-wrap: break-word; /* Ensure long words wrap to the next line */
+}
+
+.event-name {
+    font-size: 1.5em; /* Larger font size for event name */
+    margin: 0; /* Remove margin */
+}
+
+.event-description {
+    color: #666; /* Lighter color for description */
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure long words wrap to the next line */
+}
+
+.event-location, 
+.event-date, 
+.event-type { /* Apply styles to all text fields */
+    font-size: 0.9em; /* Smaller font size for location and date */
+    color: #999; /* Even lighter color for location and date */
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure long words wrap to the next line */
+}
+
+.cta-button1 {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: #fff;
+    background: rgb(30, 0, 255);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-button1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.5), transparent);
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button1:hover::before {
+    left: 100%;
+  }
+  
+  .cta-button1:active {
+    transform: scale(0.95);
+  }
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+    .view-events {
+        max-width: 1024px; /* Max width for medium screens */
+    }
+}
+
+@media (max-width: 1024px) {
+    .view-events {
+        max-width: 800px; /* Max width for smaller medium screens */
+    }
+}
+
+@media (max-width: 800px) {
+    .view-events {
+        max-width: 500px; /* Max width for small screens */
+        padding: 10px; /* Optional padding adjustment for smaller screens */
+    }
+
+    .event-item {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
