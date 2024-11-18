@@ -4,12 +4,16 @@ import logo from '../Assets/logo.png'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
-
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
     const [menu, setMenu] = useState("shop");
     const {getTotalCartItems} = useContext(ShopContext);
+    const navigate = useNavigate();
+    const hanadleClick = () => {
+        navigate('/');
+    };
     
   return (
     <div className='navbar'>
@@ -17,7 +21,7 @@ const Navbar = () => {
             <Link to='/'>
                 <img src={logo} alt='' />
             </Link>
-            <p className="varanasi-text">VARANASI</p>
+            <p onClick={hanadleClick} className="varanasi-text">VARANASI</p>
         </div>
 
         <ul className='nav-menu'>

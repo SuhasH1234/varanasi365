@@ -3,9 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0px;
     background: rgb(232, 230, 230);
-    padding: 20px; /* Add some padding */
+    padding: 1%; /* Add some padding */
 }
 
 .footer-logo {
@@ -50,8 +50,16 @@
     cursor: pointer;
 }
 
-.footer-icons-container img {
-    width: 45px;
+.footer-icons-container {
+    padding: 10px;
+    padding-bottom: 1px;
+    background: transparent;
+    border: 1px solid #ebebeb;
+    cursor: pointer;
+}
+
+.footer-icons-container img{
+    width: 40px;
     height: auto;
 }
 

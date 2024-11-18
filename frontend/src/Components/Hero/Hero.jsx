@@ -1,162 +1,36 @@
-import React from 'react'
-import './Hero.css'
-import { Box,} from'@mui/material';
-import im1 from '../Assets/v1.jpg';
-import im2 from '../Assets/p9.jpg';
-import im3 from '../Assets/p6.jpg';
-import im5 from '../Assets/p18.jpg';
-import im7 from '../Assets/p23.jpg';
-import im9 from '../Assets/p31.jpeg';
-import im11 from '../Assets/p34.jpeg';
-import im12 from '../Assets/p13.jpg';
+import React from "react";
+import "./Hero.css";
 
 const Hero = () => {
-  return (
-    <>
-    <div className='popular'>
-        <h1>NEW ARRIVALS ON ALL CATEGORIES<hr /></h1>
-    <Box
-          sx={{
-            width: '70%',
-            height: '450px',
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '10px',
-            marginBottom: '2%'
-          }}
-        >
-        <Box
-          component="img"
-          src={im3}
-          alt="img1"
-          sx={{
-            width: '15%',
-            height: '100%',
-            objectFit: 'cover',
-            borderRadius: '10px',
-            border: '0.5px solid black',
-            transition: 'all ease-in-out 0.5s',
-            '&:hover': {
-              width: '25%',
-            },
-          }}
-        />
-        <Box
-          component="img"
-          src={im2}
-          alt="img5"
-          sx={{
-            width: '15%',
-            height: '100%',
-            objectFit: 'cover',
-            borderRadius: '10px',
-            border: '1px solid black',
-            transition: 'all ease-in-out 0.5s',
-            '&:hover': {
-              width: '25%',
-            },
-          }}
-        />
-        <Box
-          component="img"
-          src={im1}
-          alt="img9"
-          sx={{
-            width: '15%',
-            height: '100%',
-            objectFit: 'cover',
-            borderRadius: '10px',
-            border: '1px solid black',
-            transition: 'all ease-in-out 0.5s',
-            '&:hover': {
-              width: '25%',
-            },
-          }}
-        />
-        <Box
-          component="img"
-          src={im12}
-          alt="img7"
-          sx={{
-            width: '15%',
-            height: '100%',
-            objectFit: 'cover',
-            borderRadius: '10px',
-            border: '1px solid black',
-            transition: 'all ease-in-out 0.5s',
-            '&:hover': {
-              width: '25%',
-            },
-          }}
-        />
-        <Box
-          component="img"
-          src={im5}
-          alt="img11"
-          sx={{
-            width: '15%',
-            height: '100%',
-            objectFit: 'cover',
-            borderRadius: '10px',
-            border: '1px solid black',
-            transition: 'all ease-in-out 0.5s',
-            '&:hover': {
-              width: '25%',
-            },
-          }}
-        />
-        <Box
-          component="img"
-          src={im7}
-          alt="im10"
-          sx={{
-            width: '15%',
-            height: '100%',
-            objectFit: 'cover',
-            borderRadius: '10px',
-            border: '1px solid black',
-            transition: 'all ease-in-out 0.5s',
-            '&:hover': {
-              width: '25%',
-            },
-          }}
-        />
-        <Box
-          component="img"
-          src={im9}
-          alt="im10"
-          sx={{
-            width: '15%',
-            height: '100%',
-            objectFit: 'cover',
-            borderRadius: '10px',
-            border: '1px solid black',
-            transition: 'all ease-in-out 0.5s',
-            '&:hover': {
-              width: '25%',
-            },
-          }}
-        />
-        <Box
-          component="img"
-          src={im11}
-          alt="im10"
-          sx={{
-            width: '15%',
-            height: '100%',
-            objectFit: 'cover',
-            borderRadius: '10px',
-            border: '1px solid black',
-            transition: 'all ease-in-out 0.5s',
-            '&:hover': {
-              width: '25%',
-            },
-          }}
-        />
-    </Box>
-    </div>
-    </>
-  )
-}
+  const images = "heropng.png";
 
-export default Hero
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 800,
+      behavior: 'smooth', // This will make the scrolling smooth
+    });
+  };
+
+  return (
+    <div className="welcome-banner">
+      <div className="content">
+        <h1 className="title">Empowering Artisans of Varanasi</h1>
+        <p className="description">
+        Handloom weavers of Varanasi, artisans preserving a timeless heritage. Join us in empowering their craft for global recognition
+        </p>
+        <button className="cta-button" onClick={scrollToTop}>
+          Explore More
+        </button>
+      </div>
+      <div className="hero-images">
+      <img
+          src={images}
+          alt="Ganges"
+          className="floating-image image-1"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

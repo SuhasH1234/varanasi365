@@ -1,0 +1,124 @@
+.list-event {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    padding: 30px 50px;
+    margin: 20px auto; /* Center the container */
+    border-radius: 6px;
+    background: white;
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* Darker text color for better readability */
+}
+
+h4 {
+    text-align: end;
+    color: darkblue;
+}
+
+.listevent-format-main {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Updated for 7 items */
+    gap: 20px; /* Reduced gap for better spacing */
+    margin-bottom: 10px;
+    padding: 10px 0px;
+    border-bottom: 2px solid #e0e0e0; /* Separator line */
+}
+
+.header-item {
+    font-weight: bold; /* Optional styling */
+}
+
+.listevent-allevents {
+    display: flex;
+    flex-direction: column;
+}
+
+.listevent-format {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Updated for 7 items */
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0; /* Divider for event items */
+}
+
+.remove-icon {
+    margin: auto;
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+}
+
+.pagination button:hover {
+    background-color: #ddd;
+}
+
+/* Media Queries (for responsiveness) */
+@media (max-width: 1280px) {
+    .list-event {
+        padding: 20px 50px; /* Adjust padding */
+    }
+
+    .listevent-format-main {
+        grid-template-columns: repeat(6, 1fr); /* Adjusted for smaller screens */
+        gap: 15px; /* Adjust gap */
+    }
+}
+
+@media (max-width: 1024px) {
+    .list-event {
+        padding: 20px 30px; /* Further adjust padding */
+    }
+
+    .listevent-format-main {
+        grid-template-columns: repeat(5, 1fr); /* Adjusted for smaller screens */
+    }
+
+    .listevent-format {
+        grid-template-columns: repeat(5, 1fr); /* Adjusted for smaller screens */
+    }
+}
+
+@media (max-width: 800px) {
+    .listevent-format-main {
+        grid-template-columns: repeat(4, 1fr); /* Adjusted for smaller screens */
+    }
+
+    .listevent-format {
+        grid-template-columns: repeat(4, 1fr); /* Adjusted for smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .listevent-format-main {
+        grid-template-columns: repeat(2, 1fr); /* For mobile screens */
+    }
+
+    .listevent-format {
+        grid-template-columns: repeat(2, 1fr); /* For mobile screens */
+        padding: 10px 0; /* Reduce padding */
+    }
+
+    h1 {
+        font-size: 18px; /* Adjust font size */
+    }
+}

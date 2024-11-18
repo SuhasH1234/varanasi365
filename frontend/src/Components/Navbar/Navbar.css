@@ -22,6 +22,7 @@
     color: #171717;
     font-size: 36px; /* Reduced font size for a more balanced look */
     font-weight: 700; /* Increased font weight for emphasis */
+    cursor: pointer;
 }
 
 .nav-menu {

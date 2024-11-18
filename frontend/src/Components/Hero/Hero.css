@@ -1,64 +1,133 @@
-.popular {
+/* Full-page banner */
+.welcome-banner {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(120deg, #ff7eb3, #ff758c, #f27173, #ffcc70);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: 50px;
+  justify-content: space-between;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 0 5%;
+  overflow: hidden;
+}
+
+/* Content Section */
+.content {
+  max-width: 50%;
+  z-index: 2;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.description {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.cta-button {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: black;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.5), transparent);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:active {
+  transform: scale(0.95);
+}
+
+/* Floating Images Section */
+.hero-images {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  margin-bottom: 35%;
+}
+
+.floating-image {
+  position: absolute;
+  width: auto;
   height: auto;
+  animation: float 6s ease-in-out infinite;
 }
 
-.popular h1 {
-  color: #171717;
-  font-size: 40px;
-  font-weight: 600;
-  margin: 0;
+.image-1 {
+  top: 5%;
+  right: 10%;
+  animation-delay: 0.5s;
 }
 
-.popular hr {
-  width: 200px;
-  height: 3px;
-  border-radius: 10px;
-  background: #252525;
-}
-
-/* Responsive Styles */
-@media (max-width: 1280px) {
-  .popular h1 {
-    font-size: 36px; /* Adjusted font size */
+@keyframes float {
+  0% {
+    transform: translateY(0);
   }
-  .popular hr {
-    width: 180px; /* Slightly narrower hr */
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 1024px) {
-  .popular h1 {
-    font-size: 32px; /* Smaller font size */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  .popular hr {
-    width: 160px; /* Adjust hr width */
-  }
-}
-
-@media (max-width: 800px) {
-  .popular h1 {
-    font-size: 28px; /* Further reduced font size */
-  }
-  .popular hr {
-    width: 140px; /* Adjust hr width */
-  }
-  .popular {
-    margin: 20px; /* Reduce margins */
+  to {
+    opacity: 1;
   }
 }
 
-@media (max-width: 500px) {
-  .popular h1 {
-    font-size: 24px; /* Smallest font size */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    max-width: 100%;
+    text-align: center;
   }
-  .popular hr {
-    width: 100px; /* Adjust hr width */
+
+  .title {
+    font-size: 2.5rem;
   }
-  .popular {
-    margin: 10px; /* Further reduce margins */
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .hero-images {
+    display: none;
   }
 }

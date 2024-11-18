@@ -1,0 +1,66 @@
+.add-event {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    padding: 30px 50px;
+    margin: 20px auto; /* Center the container */
+    border-radius: 6px;
+    background: white;
+}
+
+.add-event-itemfield {
+    width: 100%;
+    color: #7b7b7b;
+    font-size: 16px;
+    margin-bottom: 15px; /* Space between fields */
+}
+
+.add-event-itemfield input,
+.add-event-itemfield textarea,
+.add-event-itemfield select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    padding-left: 15px;
+    border: 1px solid #c3c3c3;
+    outline: none;
+    color: #7b7b7b;
+    font-family: 'Poppins';
+    font-size: 20px;
+    padding: 20px;
+}
+
+.add-event-itemfield textarea {
+    height: auto; /* Allow textarea to adjust its height based on content */
+    padding: 10px; /* Padding for textarea */
+}
+
+/* Flex container for location and date inputs */
+.add-event-location-date-container {
+    display: flex;
+    gap: 20px; /* Space between location and date */
+}
+
+.add-event-type-time-container {
+    display: flex;
+    gap: 20px; /* Space between event type and time */
+}
+
+.add-event-btn-container {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: 20px; /* Space above the button */
+}
+
+.add-event-btn {
+    width: 160px;
+    height: 50px;
+    border-radius: 6px;
+    background: #6079ff;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}

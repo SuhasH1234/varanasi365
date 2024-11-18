@@ -370,6 +370,151 @@ app.post('/getcart', fetchUser, async (req, res) => {
     res.json(userData.cartData)
 })
 
+//Schema for creating events
+const Event = mongoose.model("Event", {
+    name: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    location: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: Date,
+      required: true,
+    },
+    type: {
+        type: String,
+        enum: ['Local Event', 'Government Event'],
+        required: true,
+    },
+  });
+  
+
+// Creating API to add new event
+app.post('/createevent', async (req, res) => {
+    try {
+        const event = new Event({
+            name: req.body.name,
+            description: req.body.description,
+            location: req.body.location,
+            date: req.body.date,
+            type: req.body.type, 
+        });
+        await event.save();
+        res.json({ success: true, event });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: 'Error creating event' });
+    }
+});
+
+// API to get all events
+app.get('/allevents', async (req, res) => {
+    try {
+      const events = await Event.find({});
+      console.log("All Events Fetched");
+      res.send(events);
+    } catch (error) {
+      console.error('Error fetching events:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  });
+  
+// Creating API for deleting events
+app.post('/removeevent', async (req, res) => {
+    try {
+        // Assuming you have an Event model for your events
+        await Event.findOneAndDelete({ id: req.body.id }); // Adjust this based on how you're identifying the event
+        console.log("Event Removed");
+        res.json({
+            success: true,
+            message: "Event removed successfully",
+        });
+    } catch (error) {
+        console.error("Error removing event:", error);
+        res.status(500).json({
+            success: false,
+            message: "Error removing event",
+        });
+    }
+});
+
+//Schema for creating reviews
+const Review = mongoose.model("Review", {
+    name: {
+      type: String,
+      required: true,
+    },
+    product_name: {
+        type: String,
+        required: true,
+    },
+    ratings: {
+      type: Number,
+      required: true,
+    },
+    comments: {
+        type: String,
+        required: true,
+    },
+  });
+  
+
+// Creating API to add new review
+app.post('/createreview', async (req, res) => {
+    try {
+        const review = new Review({
+            name: req.body.name,
+            product_name: req.body.product_name,
+            ratings: req.body.ratings,
+            comments: req.body.comments
+        });
+        await review.save();
+        res.json({ success: true, review });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: 'Error creating review' });
+    }
+});
+
+// API to get all reviews
+app.get('/allreviews', async (req, res) => {
+    try {
+      const reviews = await Review.find({});
+      console.log("All Reviews Fetched");
+      res.send(reviews);
+    } catch (error) {
+      console.error('Error fetching reviews:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  });
+  
+// Creating API for deleting reviews
+app.post('/removereview', async (req, res) => {
+    try {
+        // Assuming you have an Event model for your events
+        await Review.findOneAndDelete({ id: req.body.id }); // Adjust this based on how you're identifying the event
+        console.log("Review Removed");
+        res.json({
+            success: true,
+            message: "Review removed successfully",
+        });
+    } catch (error) {
+        console.error("Error removing Review:", error);
+        res.status(500).json({
+            success: false,
+            message: "Error removing Review",
+        });
+    }
+});
+
+
 app.listen(port, (error) => {
     if(!error) {
         console.log("Server running on port "+port)

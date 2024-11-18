@@ -8,6 +8,7 @@ import Cart from './Pages/Cart';
 import LoginSignup from './Pages/LoginSignup';
 import Footer from './Components/Footer/Footer';
 import NewCollections from './Components/NewCollections/NewCollections';
+import AllEvents from './Components/AllEvents/AllEvents';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/login' element={<LoginSignup/>} />
 
         <Route path='/newcollection' element={<NewCollections/>} />
+        <Route path="/allevents" element={<AllEvents />} />
       </Routes>
       <Footer/>
       </BrowserRouter>
