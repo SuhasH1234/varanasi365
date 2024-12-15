@@ -42,7 +42,7 @@ const CartItems = () => {
         }).filter(item => item !== null);
     
         if (paymentMethod === 'Cash on Delivery') {
-            await fetch('http://localhost:4000/createOrder', {
+            await fetch('https://varanasi365.onrender.com/createOrder', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -54,7 +54,7 @@ const CartItems = () => {
             alert('Order placed successfully!');
         } else if (paymentMethod === 'UPI') {
             if (!utrNumber) return alert('Please enter UTR number');
-            await fetch('http://localhost:4000/createOrder', {
+            await fetch('https://varanasi365.onrender.com/createOrder', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
