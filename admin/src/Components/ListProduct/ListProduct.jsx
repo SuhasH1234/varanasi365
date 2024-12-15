@@ -11,7 +11,7 @@ const ListProduct = () => {
 
   // Fetch products data
   const fetchInfo = async () => {
-    await fetch('http://localhost:4000/allproducts')
+    await fetch('https://varanasi365.onrender.com/allproducts')
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   };
@@ -22,7 +22,7 @@ const ListProduct = () => {
 
   // Remove product handler
   const removeProduct = async (id) => {
-    await fetch('http://localhost:4000/removeproduct', {
+    await fetch('https://varanasi365.onrender.com/removeproduct', {
       method: 'POST',
       headers: {
         Accept: 'application.json',
