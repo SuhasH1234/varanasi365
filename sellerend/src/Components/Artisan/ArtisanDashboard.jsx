@@ -25,7 +25,7 @@ const ArtisanDashboard = () => {
   useEffect(() => {
     const fetchArtisans = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/artisansd');
+        const response = await axios.get('https://varanasi365.onrender.com/api/artisansd');
         setArtisans(response.data);
       } catch (error) {
         console.error('Error fetching artisans:', error);
