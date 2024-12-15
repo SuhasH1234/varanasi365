@@ -11,7 +11,7 @@ const Profile = () => {
         const fetchArtisanDetails = async () => {
             try {
                 const token = localStorage.getItem('artisan') ? JSON.parse(localStorage.getItem('artisan')).token : null;
-                const response = await axios.get('http://localhost:4000/artisan/profile', {
+                const response = await axios.get('https://varanasi365.onrender.com/artisan/profile', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
