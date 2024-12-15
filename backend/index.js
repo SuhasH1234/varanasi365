@@ -10,12 +10,12 @@ const { error, log } = require("console");
 const { type } = require("os");
 
 app.use(express.json());
-app.use(cors({
-    origin: 'https://varanasi365.netlify.app/', // Replace with your Netlify site URL
-  }));
+app.use(cors());
 
-// Database connection with mongodb
-mongoose.connect("mongodb+srv://suhash123:suhasvaranasi@cluster0.hveuh.mongodb.net/varanasi365")
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGO_URI);
+const jwtSecret = process.env.JWT_SECRET;
 
 // API creation
 app.get("/", (req, res) => {
