@@ -19,7 +19,7 @@ const Navbar = () => {
     };
 
     const fetchOrders = async () => {
-        const response = await fetch('http://localhost:4000/allOrders'); // Adjust the URL to your API
+        const response = await fetch('https://varanasi365.onrender.com/allOrders'); // Adjust the URL to your API
         const data = await response.json();
         setOrders(data);
     };
