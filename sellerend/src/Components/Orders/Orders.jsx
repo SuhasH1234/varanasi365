@@ -20,13 +20,13 @@ const Orders = () => {
   const ordersPerPage = 5; // Set orders per page
 
   useEffect(() => {
-    fetch('http://localhost:4000/allOrders')
+    fetch('https://varanasi365.onrender.com/allOrders')
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   const handleUpdateStatus = (orderId, status) => {
-    fetch('http://localhost:4000/updateOrderStatus', {
+    fetch('https://varanasi365.onrender.com/updateOrderStatus', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ orderId, status, comments }),
@@ -42,7 +42,7 @@ const Orders = () => {
 
   const handleDeleteOrder = (orderId) => {
     if (window.confirm('Are you sure you want to delete this order?')) {
-      fetch('http://localhost:4000/removeorder', {
+      fetch('https://varanasi365.onrender.com/removeorder', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ orderId }),

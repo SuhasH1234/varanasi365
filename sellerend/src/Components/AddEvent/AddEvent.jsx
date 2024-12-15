@@ -12,7 +12,7 @@ const AddEvent = () => {
 
   const handleAddEvent = async () => {
     try {
-      const response = await axios.post('http://localhost:4000/createevent', {
+      const response = await axios.post('https://varanasi365.onrender.com/createevent', {
         name,
         description,
         location,
