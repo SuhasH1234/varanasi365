@@ -9,7 +9,7 @@ const ListEvent = () => {
 
   // Fetch events data
   const fetchEvents = async () => {
-    await fetch('http://localhost:4000/allevents') // Adjust the endpoint as needed
+    await fetch('https://varanasi365.onrender.com/allevents') // Adjust the endpoint as needed
       .then((res) => res.json())
       .then((data) => setAllEvents(data));
   };
@@ -20,7 +20,7 @@ const ListEvent = () => {
 
   const removeEvent = async (id) => {
     try {
-        const response = await fetch('http://localhost:4000/removeevent', {
+        const response = await fetch('https://varanasi365.onrender.com/removeevent', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
