@@ -1,7 +1,5 @@
 import React, {useContext, useState} from 'react';
 import './ProductDisplay.css';
-import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
-import StarIcon from '@mui/icons-material/Star';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import Snackbar from '@mui/material/Snackbar';
 import { ShopContext } from '../../Context/ShopContext';
