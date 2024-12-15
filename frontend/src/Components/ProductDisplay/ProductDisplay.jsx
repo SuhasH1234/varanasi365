@@ -60,19 +60,7 @@ const ProductDisplay = (props) => {
                 <img className='productdisplay-main-img' src={product.image} alt="" />
             </div>
             <div className="productdisplay-right">
-                <h1>{product.name}</h1>
-                <div className="productdisplay-right-star">
-                    <StarIcon style={{ color: '#ffd700' }} />
-                    <StarIcon style={{ color: '#ffd700' }} />
-                    <StarIcon style={{ color: '#ffd700' }} />
-                    <StarIcon style={{ color: '#ffd700' }} />
-                    <StarBorderOutlinedIcon style={{ color: '#ffd700' }} />
-                    <p>(122)</p>
-                    <div className="productdisplay-volumeicon">
-                        <VolumeUpIcon onClick={readProductDetails} 
-                        />
-                    </div>
-                </div>
+                <h1>{product.name} <VolumeUpIcon sx={{ml: "5%", color: 'red'}} onClick={readProductDetails} /></h1>
                 <div className="productdisplay-right-prices">
                     <div className="productdisplay-right-price-old">
                         ₹{product.old_price}

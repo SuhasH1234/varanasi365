@@ -207,7 +207,7 @@ app.get('/newcollections', async (req, res) => {
 
 // Creating API for popular in the site
 app.get('/popular', async (req, res) => {
-    let products = await Product.find({category: "Saree"});
+    let products = await Product.find({category: "Varanasi Special"});
     let popular_in_site = products.slice(0, 4);
     console.log("Popular in the site Fetched");
     res.send(popular_in_site);
