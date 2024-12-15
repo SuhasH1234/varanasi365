@@ -1,4 +1,6 @@
-const port = 4000;
+require('dotenv').config(); // Add this line to load .env variables
+
+const port = process.env.PORT;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -12,33 +14,42 @@ const { type } = require("os");
 app.use(express.json());
 app.use(cors());
 
-// Database connection with mongodb
-mongoose.connect("mongodb+srv://suhash123:suhasvaranasi@cluster0.hveuh.mongodb.net/varanasi365")
+// Database connection with MongoDB
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("Connected to MongoDB"))
+    .catch(err => console.error("MongoDB connection error:", err));
 
 // API creation
 app.get("/", (req, res) => {
-    res.send("Express App is running")
-})
+    res.send("Express App is running");
+});
 
 // Image storage engine
 const storage = multer.diskStorage({
-    destination: './upload/images',
+    destination: process.env.UPLOAD_PATH,
     filename: (req, file, cb) => {
-        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
     }
-})
+});
 
-const upload = multer({storage:storage})
+const upload = multer({ storage: storage });
 
 // Creating Upload endpoint for images
-app.use('/images', express.static('upload/images'))
+app.use('/images', express.static(process.env.UPLOAD_PATH));
 
 app.post("/upload", upload.single('product'), (req, res) => {
     res.json({
         success: 1,
         image_url: `http://localhost:${port}/images/${req.file.filename}`
-    })
-})
+    });
+});
+
+// Replace hardcoded JWT secret key
+const jwtSecret = process.env.JWT_SECRET;
+
+// Example usage of JWT secret key
+const data = { user: { id: "someUserId" } };
+const token = jwt.sign(data, jwtSecret);
 
 // Schema for creating products
 const Product = mongoose.model("Product", {
