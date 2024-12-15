@@ -7,7 +7,7 @@ const RelatedProducts = () => {
   const [relatedproducts, setRelatedProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/newcollections')
+    fetch('https://varanasi365.onrender.com/newcollections')
         .then((response) => response.json())
         .then((data) => {
           setRelatedProducts(data.slice(0, 4));
