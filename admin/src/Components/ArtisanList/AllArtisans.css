@@ -29,6 +29,19 @@
     margin: 5px 0; /* Space between paragraphs */
 }
 
+/* Additional styles for the delete icon */
+.delete-icon {
+    color: #ff4d4f; /* Red color for delete */
+    cursor: pointer; /* Pointer cursor */
+    float: right; /* Align icon to the right */
+    margin-top: -200px; /* Adjust position relative to the list */
+    transition: color 0.3s ease;
+  }
+  
+  .delete-icon:hover {
+    color: #d11a2a; /* Darker red on hover */
+  }  
+
 /* Divider style */
 .artisan-list hr {
     border: 0; /* Remove default border */

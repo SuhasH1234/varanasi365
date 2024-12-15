@@ -6,10 +6,26 @@ import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutl
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import EventOutlinedIcon from '@mui/icons-material/EventOutlined';
+import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 const Sidebar = () => {
   return (
     <div className='sidebar'>
+      <Link to={'/artisanformD'} style={{ textDecoration: 'none' }}>
+        <div className="sidebar-item">
+          <EditOutlinedIcon style={{ color: 'black' }} />
+          <p>Edit Dashboard</p>
+        </div>
+      </Link>
+      <Link to={'/artisankistD'} style={{ textDecoration: 'none' }}>
+        <div className="sidebar-item">
+          <GridViewOutlinedIcon style={{ color: 'black' }} />
+          <p>Dashboard</p>
+        </div>
+      </Link>
       <Link to={'/addproduct'} style={{ textDecoration: 'none' }}>
         <div className="sidebar-item">
           <AddShoppingCartOutlinedIcon style={{ color: 'black' }} />
@@ -20,6 +36,12 @@ const Sidebar = () => {
         <div className="sidebar-item">
           <FormatListBulletedOutlinedIcon style={{ color: 'black' }} />
           <p>Product List</p>
+        </div>
+      </Link>
+      <Link to={'/orders'} style={{ textDecoration: 'none' }}>
+        <div className="sidebar-item">
+          <Inventory2OutlinedIcon style={{ color: 'black' }} />
+          <p>Orders</p>
         </div>
       </Link>
       <Link to={'/addevent'} style={{ textDecoration: 'none' }}>
@@ -36,6 +58,7 @@ const Sidebar = () => {
       </Link>
       <Link to={'/profile'} style={{ textDecoration: 'none' }}>
         <div className="sidebar-item">
+          <AccountCircleOutlinedIcon style={{ color: 'black' }} />
           <p>Profile</p>
         </div>
       </Link>
