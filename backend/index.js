@@ -91,6 +91,18 @@ const Product = mongoose.model("Product", {
     },
 })
 
+// Update the image URLs in all records
+Product.updateMany(
+    { image: { $regex: '^http://localhost:4000/images/' } }, // Match images starting with this URL
+    [{ $set: { image: { $replaceOne: { input: '$image', find: 'http://localhost:4000/images/', replacement: 'https://varanasi365.onrender.com/images/' } } } }]
+)
+.then(result => {
+    console.log(`Updated ${result.modifiedCount} records.`);
+})
+.catch(err => {
+    console.error('Error updating records:', err);
+});
+
 app.post('/addproduct', async (req, res) => {
     let products = await Product.find({});
     let id;
