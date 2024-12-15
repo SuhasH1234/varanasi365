@@ -15,7 +15,7 @@ const DescriptionBox = () => {
     // Fetch reviews from the API
     const fetchReviews = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/allreviews');
+            const response = await axios.get('https://varanasi365.onrender.com/allreviews');
             setReviews(response.data);
         } catch (error) {
             console.error('Error fetching reviews:', error);
@@ -31,7 +31,7 @@ const DescriptionBox = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:4000/createreview', {
+            const response = await axios.post('https://varanasi365.onrender.com/createreview', {
                 name,
                 product_name,
                 ratings,
@@ -50,7 +50,7 @@ const DescriptionBox = () => {
     // Handle removing a review
     const handleRemoveReview = async (id) => {
         try {
-            const response = await fetch('http://localhost:4000/removereview', {
+            const response = await fetch('https://varanasi365.onrender.com/removereview', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
