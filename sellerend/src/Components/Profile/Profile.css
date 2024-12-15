@@ -1,0 +1,82 @@
+/* Main container for the Profile component */
+.profile-container {
+    width: 100%; /* Maximum width */
+    margin: 0 -70px; /* Center alignment */
+    padding: 20px; /* Inner padding */
+}
+
+/* Title styles */
+.profile-container h1 {
+    text-align: center; /* Center the title */
+    font-size: 2.5em; /* Larger font size for the title */
+    margin-bottom: 20px; /* Space below the title */
+    color: #4a4a4a; /* Professional gray color */
+}
+
+/* Error message styles */
+.profile-container p.error {
+    color: #d9534f; /* Bootstrap danger color for error */
+    text-align: center; /* Center the error message */
+}
+
+/* Profile details styles */
+.profile-details {
+    background-color: white; /* White background for details */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    margin: 0 100px; /* Center the profile details */
+    max-width: 600px; /* Limit the width of profile details */
+}
+
+/* Individual profile detail styles */
+.profile-details p {
+    margin: 10px 0; /* Space between detail paragraphs */
+    font-size: 1.2em; /* Slightly larger text for details */
+}
+
+/* Loading message styles */
+.loading-message {
+    text-align: center; /* Center the loading message */
+    font-size: 1.5em; /* Larger loading text */
+}
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+    .profile-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    .profile-container h1 {
+        font-size: 2.2em; /* Slightly smaller title */
+    }
+}
+
+@media (max-width: 1024px) {
+    .profile-container {
+        padding: 10px; /* Further adjust padding */
+    }
+    .profile-details {
+        padding: 15px; /* Adjust padding inside details */
+    }
+}
+
+@media (max-width: 800px) {
+    .profile-details {
+        padding: 10px; /* Less padding for small screens */
+    }
+    .profile-container h1 {
+        font-size: 1.8em; /* Smaller title for smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .profile-container {
+        padding: 5px; /* Minimal padding */
+    }
+    .profile-container h1 {
+        font-size: 1.5em; /* Smallest title size */
+    }
+    .profile-details p {
+        font-size: 1em; /* Small font size for details */
+    }
+}

@@ -8,8 +8,8 @@ const Navbar = ({ isAuthenticated, handleLogout }) => {
       <div className="nav-logo">
         <img src={adminLogo} alt="" className="nav-logo-img" />
         <div className="nav-text">
-          <p className="artisan-text">ARTISAN</p>
-          <p className="admin-panel-text">Admin Panel</p>
+          <p className="artisan-text">ADMIN</p>
+          <p className="admin-panel-text">Panel</p>
         </div>
       </div>
 

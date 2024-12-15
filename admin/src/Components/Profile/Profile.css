@@ -1,8 +1,9 @@
 /* Main container for the Profile component */
 .profile-container {
-    width: 100%; /* Maximum width */
-    margin: 0 5px; /* Center alignment */
-    padding: 20px; /* Inner padding */
+    width: 100%;
+    height:max-content; /* Maximum width */
+    margin: 0 -80px;
+    padding: 50px; /* Inner padding */
 }
 
 /* Title styles */

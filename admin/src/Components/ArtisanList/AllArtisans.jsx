@@ -1,7 +1,9 @@
 // AllArtisans.jsx
 import React, { useEffect, useState } from 'react';
-import './AllArtisans.css'; // Import the CSS file
+import './AllArtisans.css';
 import axios from 'axios';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Button } from '@mui/material';
 
 const AllArtisans = () => {
   const [artisans, setArtisans] = useState([]);
@@ -19,6 +21,23 @@ const AllArtisans = () => {
     fetchArtisans();
   }, []);
 
+  const deleteArtisan = async (id) => {
+    try {
+      const response = await axios.post('http://localhost:4000/removeartisan', { id });
+      
+      if (response.data.success) {
+        // Remove artisan from the UI
+        setArtisans((prevArtisans) => prevArtisans.filter((artisan) => artisan._id !== id));
+        alert('Artisan deleted successfully. The user will no longer be able to log in.');
+      } else {
+        alert('Failed to delete artisan. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error deleting artisan:', error);
+      alert('An error occurred while trying to delete the artisan.');
+    }
+  };  
+
   return (
     <div className="artisans-container">
       
@@ -33,6 +52,15 @@ const AllArtisans = () => {
             <p><strong>City:</strong> {artisan.city}</p>
             <p><strong>Country:</strong> {artisan.country}</p>
             <hr />
+            <Button
+              variant="contained"
+              className='delete-button'
+              color="error"
+              startIcon={<DeleteIcon />}
+              onClick={() => deleteArtisan(artisan._id)}
+            >
+              Delete Artisan
+            </Button>
           </li>
         ))}
       </ul>

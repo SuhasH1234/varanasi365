@@ -1,0 +1,111 @@
+.orders {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    padding: 30px 50px;
+    margin: 20px auto; /* Center the container */
+    border-radius: 6px;
+    background: white;
+  }
+
+
+.heading {
+  text-align: center;
+    color: #333;
+}
+
+  .total-orders {
+    text-align: end;
+    color: darkblue;
+}
+  
+  .no-orders-message {
+    text-align: center;
+    color: #888;
+    margin: 20px 0;
+    font-size: 18px;
+  }
+  
+  .orders-table {
+    margin-top: 20px;
+  }
+  
+  .orders-table .MuiTableCell-root {
+    border-bottom: 1px solid #e0e0e0; /* Divider for table cells */
+  }
+  
+  .orders-table button {
+    margin-right: 8px; /* Space between buttons */
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-direction: row; /* Change to row to align buttons horizontally */
+    align-items: center; /* Center align buttons vertically */
+  }
+  
+  .orders-table button {
+    margin-right: 8px; /* Space between buttons */
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .pagination button.active {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+  }
+  
+  .pagination button:hover {
+    background-color: #ddd;
+  }
+  
+  .total-orders {
+    margin: 10px 0; /* Space above the total orders text */
+  }
+  
+  @media (max-width: 1280px) {
+    .orders {
+      padding: 20px; /* Adjust padding */
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .orders {
+      padding: 15px; /* Further adjust padding */
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .orders {
+      padding: 10px; /* Further adjust padding */
+    }
+  
+    .orders-table {
+      font-size: 14px; /* Adjust font size */
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .orders {
+      padding: 5px; /* Further adjust padding */
+    }
+  
+    .orders-table {
+      font-size: 12px; /* Adjust font size */
+    }
+  }
+  

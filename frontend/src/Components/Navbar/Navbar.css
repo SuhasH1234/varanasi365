@@ -5,6 +5,7 @@
     padding: 12px 32px; /* Added horizontal padding for a more spacious look */
     background-color: #ffffff; /* Set a background color for the navbar */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Softer shadow for a more modern look */
+    position: relative; /* Ensure proper stacking context for absolute children */
 }
 
 .nav-logo {
@@ -139,6 +140,7 @@
     .nav-login-cart {
         flex-direction: column; /* Stack login and cart */
         gap: 10px;
+        align-items: flex-end; /* Align items to the right */
     }
     .nav-menu {
         display: none; /* Hide menu items */

@@ -250,7 +250,7 @@ const Artisan = mongoose.model('Artisan', {
     date: {
         type: Date,
         default: Date.now,
-    }
+    },
 });
 
 // Creating API for artisan registration (Signup)
@@ -333,7 +333,6 @@ app.get('/artisan/profile', async (req, res) => {
 });
 
 // Creating API for getting all artisans
-// Add this to your existing index.js file after your artisan schema
 app.get('/getallartisans', async (req, res) => {
     try {
         const artisans = await Artisan.find({});
@@ -344,7 +343,24 @@ app.get('/getallartisans', async (req, res) => {
     }
 });
 
-
+// Creating API for deleting aryisans
+app.post('/removeartisan', async (req, res) => {
+    const { id } = req.body;
+  
+    try {
+      // Find and delete the artisan
+      const artisan = await Artisan.findById(id);
+      if (!artisan) return res.status(404).json({ success: false, message: 'Artisan not found' });
+      await Artisan.findByIdAndDelete(id);
+  
+      // Respond with success
+      res.json({ success: true, message: 'Artisan removed successfully' });
+    } catch (error) {
+      console.error('Error removing artisan:', error);
+      res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+  });
+  
 
 // Creating API for adding products in cartdata
 app.post('/addtocart', fetchUser, async (req, res) => {
@@ -445,6 +461,65 @@ app.post('/removeevent', async (req, res) => {
     }
 });
 
+const ArtisanD = mongoose.model("ArtisanD", {
+    artisanOfTheMonth: {
+      type: String,
+      required: true,
+    },
+    sales: {
+      type: Number,
+      required: true,
+    },
+    rank: {
+      type: Number,
+      required: true,
+    },
+    earnings: {
+      type: Number,
+      required: true,
+    },
+  });
+  
+  // API to create artisan
+  app.post('/api/artisansd', async (req, res) => {
+    try {
+      const artisand = new ArtisanD(req.body);
+      await artisand.save();
+      res.status(201).send(artisand);
+    } catch (error) {
+      res.status(400).send(error);
+    }
+  });
+  
+  // API to get all artisans
+  app.get('/api/artisansd', async (req, res) => {
+    try {
+      const artisansd = await ArtisanD.find();
+      res.status(200).send(artisansd);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  });
+  
+  // API to delete artisan
+  app.delete('/api/artisansd/:id', async (req, res) => {
+    try {
+      const artisand = await ArtisanD.findByIdAndDelete(req.params.id);
+      if (!artisand) {
+        return res.status(404).send();
+      }
+      res.send(artisand);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  });
+  
+  // Start server
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+
 //Schema for creating reviews
 const Review = mongoose.model("Review", {
     name: {
@@ -514,6 +589,76 @@ app.post('/removereview', async (req, res) => {
     }
 });
 
+const Order = mongoose.model('Order', {
+    orderId: String,
+    cartItems: Array,
+    totalAmount: Number,
+    paymentMethod: String,
+    utrNumber: String,
+    status: { type: String, default: 'Pending' },
+});
+
+// Create Order API
+app.post('/createOrder', async (req, res) => {
+    const { cartItems, totalAmount, paymentMethod, utrNumber } = req.body;
+    const orderId = `ORD${Date.now()}`;
+    const newOrder = new Order({
+        orderId,
+        cartItems,
+        totalAmount,
+        paymentMethod,
+        utrNumber: paymentMethod === 'UPI' ? utrNumber : null,
+    });
+
+    await newOrder.save();
+    res.json({ success: true, message: 'Order created successfully!', orderId });
+});
+
+// Admin Panel Order Actions
+app.post('/updateOrderStatus', async (req, res) => {
+    const { orderId, status, comments } = req.body;
+    await Order.findOneAndUpdate({ orderId }, { status, comments });
+    res.json({ success: true, message: 'Order updated successfully!' });
+});
+
+// Get All Orders
+// Sample backend code to adjust the response format
+app.get('/allOrders', async (req, res) => {
+    try {
+      const orders = await Order.find(); // Assuming Order is your model for orders
+      const formattedOrders = orders.map(order => {
+        return {
+          orderId: order.orderId,
+          cartItems: order.cartItems.map(item => ({
+            name: item.name, // Assuming 'name' exists in your database
+            quantity: item.quantity,
+            price: item.price
+          })),
+          totalAmount: order.totalAmount,
+          paymentMethod: order.paymentMethod,
+          status: order.status
+        };
+      });
+      res.json(formattedOrders);
+    } catch (error) {
+      res.status(500).json({ message: 'Error fetching orders' });
+    }
+  });
+  
+// API for deleting an order by ID
+app.post('/removeorder', async (req, res) => {
+    try {
+        const result = await Order.findOneAndDelete({ orderId: req.body.orderId });
+        if (!result) {
+            return res.status(404).json({ success: false, message: "Order not found" });
+        }
+        console.log(`Order with ID ${req.body.orderId} removed.`);
+        res.json({ success: true, message: "Order removed successfully" });
+    } catch (error) {
+        console.error("Error removing order:", error);
+        res.status(500).json({ success: false, message: "Internal server error" });
+    }
+});
 
 app.listen(port, (error) => {
     if(!error) {

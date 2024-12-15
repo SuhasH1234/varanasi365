@@ -3,9 +3,10 @@
     flex-direction: column;
     padding-top: 30px;
     gap: 20px;
+    margin-bottom: 20px;
     width: 100%;
-    max-width: 250px; /* Default width */
-    height: auto;
+    max-width: 290px; /* Default width */
+    height: 790px;
     background: white;
 }
 
