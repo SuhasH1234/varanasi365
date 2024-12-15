@@ -25,12 +25,12 @@ const Artisan = ({ setIsAuthenticated }) => {
             let response;
 
             if (isLogin) {
-                response = await axios.post('http://localhost:4000/artisan/login', {
+                response = await axios.post('https://varanasi365.netlify.app/artisan/login', {
                     email: formData.email,
                     password: formData.password,
                 });
             } else {
-                response = await axios.post('http://localhost:4000/artisan/signup', {
+                response = await axios.post('https://varanasi365.netlify.app/artisan/signup', {
                     name: formData.name,
                     email: formData.email,
                     phone: formData.phone,

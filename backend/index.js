@@ -12,10 +12,8 @@ const { type } = require("os");
 app.use(express.json());
 app.use(cors());
 
-require('dotenv').config();
-
-mongoose.connect(process.env.MONGO_URI);
-const jwtSecret = process.env.JWT_SECRET;
+// Database connection with mongodb
+mongoose.connect("mongodb+srv://suhash123:suhasvaranasi@cluster0.hveuh.mongodb.net/varanasi365")
 
 // API creation
 app.get("/", (req, res) => {
