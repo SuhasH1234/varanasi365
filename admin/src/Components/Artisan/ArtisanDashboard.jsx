@@ -25,7 +25,7 @@ const ArtisanDashboard = () => {
   useEffect(() => {
     const fetchArtisans = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/artisansd');
+        const response = await axios.get('https://varanasi365.onrender.com/api/artisansd');
         setArtisans(response.data);
       } catch (error) {
         console.error('Error fetching artisans:', error);
@@ -36,7 +36,7 @@ const ArtisanDashboard = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/artisansd/${id}`);
+      await axios.delete(`https://varanasi365.onrender.com/api/artisansd/${id}`);
       setArtisans(artisans.filter((artisan) => artisan._id !== id)); // Update local state
     } catch (error) {
       console.error('Error deleting artisan:', error);
