@@ -20,7 +20,7 @@ const Dashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
     try {
-      await axios.post('http://localhost:5000/api/artisansd', formData);
+      await axios.post('https://varanasi365.onrender.com/api/artisansd', formData);
       alert('Details submitted successfully!');
       setFormData({
         artisanOfTheMonth: '',
