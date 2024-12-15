@@ -9,7 +9,7 @@ const AllEvents = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/allevents');
+        const response = await axios.get('https://varanasi365.onrender.com/allevents');
         setEvents(response.data);
       } catch (error) {
         console.error('Error fetching events:', error);
