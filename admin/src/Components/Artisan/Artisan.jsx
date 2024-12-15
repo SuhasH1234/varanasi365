@@ -140,7 +140,7 @@ const Artisan = ({ setIsAuthenticated }) => {
                     )}
                     <button type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
                     <p className="loginsignup-login">
-                        {isLogin ? 'Create an account?' : 'Already have an account? '}
+                        {isLogin ? 'Create an account ? ' : 'Already have an account? '}
                         <span onClick={() => setIsLogin(!isLogin)}>
                             {isLogin ? 'Click here' : 'Login here'}
                         </span>

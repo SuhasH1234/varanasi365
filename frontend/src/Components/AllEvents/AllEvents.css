@@ -43,7 +43,7 @@
     transition: transform 0.2s; /* Smooth transition for hover effect */
     display: flex; /* Use flexbox for centering */
     flex-direction: column; /* Stack elements vertically */
-    height: 200px; /* Fixed height for consistent spacing */
+    height: auto; /* Fixed height for consistent spacing */
     text-align: center; /* Center text within each item */
     margin-bottom: 10%;
 }
