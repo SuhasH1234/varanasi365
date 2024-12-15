@@ -11,7 +11,7 @@ const AllArtisans = () => {
   useEffect(() => {
     const fetchArtisans = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/getallartisans'); // Your API endpoint to fetch artisans
+        const response = await axios.get('https://varanasi365.onrender.com/getallartisans'); // Your API endpoint to fetch artisans
         setArtisans(response.data);
       } catch (error) {
         console.error('Error fetching artisans:', error);
@@ -23,7 +23,7 @@ const AllArtisans = () => {
 
   const deleteArtisan = async (id) => {
     try {
-      const response = await axios.post('http://localhost:4000/removeartisan', { id });
+      const response = await axios.post('https://varanasi365.onrender.com/removeartisan', { id });
       
       if (response.data.success) {
         // Remove artisan from the UI
