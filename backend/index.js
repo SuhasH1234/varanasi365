@@ -10,7 +10,9 @@ const { error, log } = require("console");
 const { type } = require("os");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://varanasi365.netlify.app/', // Replace with your Netlify site URL
+  }));
 
 // Database connection with mongodb
 mongoose.connect("mongodb+srv://suhash123:suhasvaranasi@cluster0.hveuh.mongodb.net/varanasi365")
