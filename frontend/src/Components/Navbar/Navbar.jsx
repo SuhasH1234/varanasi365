@@ -53,12 +53,31 @@ const Navbar = () => {
             </ul>
 
             <div className='nav-login-cart'>
-                {localStorage.getItem('auth-token')
-                    ? <button onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }}>Log Out</button>
-                    : <Link to='/login'><button>Login</button></Link>}
-                <Link to='/cart'><ShoppingCartOutlinedIcon fontSize='large' /></Link>
+                {localStorage.getItem('auth-token') ? (
+                    <>
+                        <button
+                            onClick={() => {
+                                localStorage.removeItem('auth-token');
+                                window.location.replace('/');
+                            }}
+                        >
+                            Log Out
+                        </button>
+                        <LocalShippingOutlinedIcon
+                            onClick={toggleOrders}
+                            fontSize='large'
+                            sx={{ cursor: 'pointer' }}
+                        />
+                    </>
+                ) : (
+                    <Link to='/login'>
+                        <button>Login</button>
+                    </Link>
+                )}
+                <Link to='/cart'>
+                    <ShoppingCartOutlinedIcon fontSize='large' />
+                </Link>
                 <div className='nav-cart-count'>{getTotalCartItems()}</div>
-                <LocalShippingOutlinedIcon onClick={toggleOrders} fontSize='large' sx={{ cursor: 'pointer'}}/>{/* Button to toggle orders visibility */}
             </div>
 
             {/* Dialog for order details */}
